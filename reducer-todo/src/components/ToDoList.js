@@ -1,20 +1,21 @@
-import React, { useReducer } from "react";
-import { reducer, initialState } from '../reducers/reducer'
-import Todo from './ToDo'
+  
+import React, { useReducer } from 'react';
 
-export default function ToDoList(){
-    const [state, dispatch] = useReducer(reducer, initialState);
+import Todo from './ToDo';
+import TodoForm from './ToDoForm';
+import { todoReducer, initialTodosState } from '../reducers/reducer'
 
-    return(<>
+export default function TodoList() {
+  const [ state, dispatch ] = useReducer(todoReducer, initialTodosState);
 
-            {
-                state.map(  
-                    (todo) => {
-                        return <Todo todo={todo} key={todo.id} dispatch={dispatch} />
-                    }
-                )
-            }
-
-    </>)
+  return (
+    <div>
+      {
+        state.map( (todo) => {
+          return <Todo todo={todo} key={todo.id} dispatch={dispatch} />
+        })
+      }
+      <TodoForm dispatch={dispatch} />
+    </div>
+  );
 }
-
