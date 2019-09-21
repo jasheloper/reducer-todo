@@ -1,18 +1,18 @@
 export const initialTodosState = [
   {
     item: 'Project',
-    completed: false,
-    id: 1569028263662
+    completed: true,
+    id: 1
   }, 
   {
     item: 'Take a Break',
     completed: false,
-    id: 1569028288640
+    id: 2
   },
   {
     item: 'Submit Pull Request',
     completed: false,
-    id: 1569028363524
+    id: 3
   }
 ];
 
